@@ -119,8 +119,10 @@ public class GameEngine {
                 }
 
                 print(moveComment);
-                if(cp.getActivePlayer() == p1) cp.setActivePlayer(p2);
-                if(cp.getActivePlayer() == p2) cp.setActivePlayer(p1);
+                if(cp.getActivePlayer() == p1) 
+                    cp.setActivePlayer(p2);
+                else
+                    cp.setActivePlayer(p1);
                 
             }catch(InputMismatchException err){
                 System.out.println("Select Bin A - F Only");
