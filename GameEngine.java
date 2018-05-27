@@ -100,15 +100,18 @@ public class GameEngine {
                 if (x == 99) System.exit(1);
 
                 //validation 1
-                Disk testX = bin[x].peekDisk();
-                Disk testY = bin[y].peekDisk();
-                int result = testX.compareTo(testY);
-                if(bin[x].peekDisk() == null || bin[y].peekDisk() == null){
-                    moveComment = "Illegal Move";
-                }else if(result == 1){
-                    moveComment = "Illegal Move";
-                }
-                else{
+                Disk binX = bin[x].peekDisk();
+                Disk binY = bin[y].peekDisk();
+                int result;
+                // validation A to B
+                if(binY != null){
+                    result = binX.compareTo(binY);
+                    if(result > 0){
+                        moveComment = "Illegal Move";
+                    }
+                }else if(binX == null){ // validation null
+                    moveComment = "Illegal Move"; 
+                }else {
                     cp.move(x, y);
                 }
 
