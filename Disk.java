@@ -26,10 +26,10 @@ public class Disk implements Comparable<Disk>{
     public int compareTo(Disk t) {
         if (t == null) return 1;
         else if (size == t.getSize()) // same disk size
-                return 1;
+                return 0;
             else if (size > t.getSize()) // disk source bigger than disk destination
                 return 1;
             else
-                return 0;
+                return -1;
     }
 }

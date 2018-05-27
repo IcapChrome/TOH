@@ -75,6 +75,7 @@ public class GameEngine {
             try{
                 moveComment = "";
                 int x = 0;
+                System.out.println("Player "+cp.getActivePlayer());
                 System.out.print("Move From ");
                 String input = sc.next();
                 String upInput = input.toUpperCase();
@@ -103,11 +104,9 @@ public class GameEngine {
                 //validation 1
                 Disk binX = bin[x].peekDisk();
                 Disk binY = bin[y].peekDisk();
-                int result;
                 // validation A to B
                 if(binY != null && binX != null){
-                    result = binX.compareTo(binY);
-                    if(result > 0){
+                    if(binX.getSize() > binY.getSize()){
                         moveComment = "Illegal Move";
                     }
                 }else if(binX == null){ // validation null
@@ -120,8 +119,8 @@ public class GameEngine {
                 }
 
                 print(moveComment);
-                if(cp.getActivePlayer == p1) cp.setActivePlayer(p2)
-                if(cp.getActivePlayer == p2) cp.setActivePlayer(p1);
+                if(cp.getActivePlayer() == p1) cp.setActivePlayer(p2);
+                if(cp.getActivePlayer() == p2) cp.setActivePlayer(p1);
                 
             }catch(InputMismatchException err){
                 System.out.println("Select Bin A - F Only");
