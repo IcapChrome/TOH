@@ -104,7 +104,7 @@ public class GameEngine {
                 Disk testY = bin[y].peekDisk();
                 if(bin[x].peekDisk() == null){
                     moveComment = "Illegal Move";
-                }else if(testX.getSize() > testY.getSize()){
+                }else if(testX.getSize() > testY.getSize() && textY != null){
                     moveComment = "Illegal Move";
                 }
                 else{
