@@ -112,11 +112,16 @@ public class GameEngine {
                     }
                 }else if(binX == null){ // validation null
                     moveComment = "Illegal Move"; 
-                }else {
+                }else if(binX.getPlayer() != cp.getActivePlayer()){
+                    moveComment = "Illegal Move";  
+                }
+                else {
                     cp.move(x, y);
                 }
 
                 print(moveComment);
+                if(cp.getActivePlayer == p1) cp.setActivePlayer(p2)
+                if(cp.getActivePlayer == p2) cp.setActivePlayer(p1);
                 
             }catch(InputMismatchException err){
                 System.out.println("Select Bin A - F Only");

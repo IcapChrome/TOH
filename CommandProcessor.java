@@ -19,6 +19,10 @@ public class CommandProcessor {
     public void setActivePlayer(Player p){
         activePlayer = p;
     }
+
+    public Player getActivePlayer(){
+        return activePlayer;
+    }
     
     
 }
