@@ -102,9 +102,10 @@ public class GameEngine {
                 //validation 1
                 Disk testX = bin[x].peekDisk();
                 Disk testY = bin[y].peekDisk();
+                int result = testX.compareTo(testY);
                 if(bin[x].peekDisk() == null){
                     moveComment = "Illegal Move";
-                }else if(testX.getSize() > testY.getSize() && textY != null){
+                }else if(result == 1){
                     moveComment = "Illegal Move";
                 }
                 else{

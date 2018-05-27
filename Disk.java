@@ -22,10 +22,10 @@ public class Disk implements Comparable<Disk>{
     public int compareTo(Disk t) {
         if (t == null) return 1;
         else if (size == t.getSize()) 
-                return 0;
+                return 1;
             else if (size > t.getSize()) 
                 return 1;
             else
-                return -1;
+                return 0;
     }
 }
