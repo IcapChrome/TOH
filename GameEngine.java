@@ -38,6 +38,7 @@ public class GameEngine {
     private void CreateBins(){
         bin = new Bin[numOfBins];
         for (int i=0;i<numOfBins;i++){
+            bin[i] = new Bin();
             switch(i){
                 case 0: bin[i].setlabel("A");
                         break;
@@ -102,9 +103,18 @@ public class GameEngine {
                 if(bin[x].peekDisk() == null){
                     moveComment = "Illegal Move";
                 }
+                Disk testX = bin[x].peekDisk();
+                Disk testY = bin[y].peekDisk();
+                //int testY
+                // validation 2
+                if(testX.getSize() > testY.getSize()){
+                    moveComment = "Illegal Move";
+                }
+                else{
+                    cp.move(x, y);
+                }
 
-                cp.move(x, y);
-                print();
+                print(moveComment);
                 
             }catch(InputMismatchException err){
                 System.out.println("Select Bin A - F Only");
