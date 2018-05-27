@@ -13,6 +13,10 @@ public class Disk implements Comparable<Disk>{
         return size;
     }
     
+    public Player getPlayer(){
+        return player;
+    }
+    
     @Override
     public String toString(){
         return String.format("%d %s %c\n",size,player,player.getSym());
@@ -21,9 +25,9 @@ public class Disk implements Comparable<Disk>{
     @Override
     public int compareTo(Disk t) {
         if (t == null) return 1;
-        else if (size == t.getSize()) 
+        else if (size == t.getSize()) // same disk size
                 return 1;
-            else if (size > t.getSize()) 
+            else if (size > t.getSize()) // disk source bigger than disk destination
                 return 1;
             else
                 return 0;

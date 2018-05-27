@@ -9,6 +9,7 @@ public class Bin {
     
     public Bin(){
         disks = new Stack<Disk>();
+        label = "";
     }
     
     int getNumDisks(){
@@ -19,7 +20,7 @@ public class Bin {
         label = lbl;
     }
     
-    public String getLabel(){
+    public String getLabel(){ // getter method for label.
         return label;
     }
     

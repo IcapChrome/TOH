@@ -13,7 +13,7 @@ public class CommandProcessor {
     }
     
     public void move(int src, int des) {    // Moves the disk from the source to destination
-          bins[des].addDisk(bins[src].removeDisk());      
+         bins[des].addDisk(bins[src].removeDisk());      
     }
     
     public void setActivePlayer(Player p){

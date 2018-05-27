@@ -73,6 +73,7 @@ public class GameEngine {
         
         while(true){
             try{
+                moveComment = "";
                 int x = 0;
                 System.out.print("Move From ");
                 String input = sc.next();
@@ -104,7 +105,7 @@ public class GameEngine {
                 Disk binY = bin[y].peekDisk();
                 int result;
                 // validation A to B
-                if(binY != null){
+                if(binY != null && binX != null){
                     result = binX.compareTo(binY);
                     if(result > 0){
                         moveComment = "Illegal Move";
