@@ -12,6 +12,7 @@ public class GameEngine {
     private Disk [] dA;
     private Disk [] dF;
     private CommandProcessor cp;
+    private String moveComment;
     
     private void CreatePlayers(){
         p1 = new Player("sharaf",'#');        
@@ -96,6 +97,12 @@ public class GameEngine {
                 if (upInput2.equals("Z") ) y = 99;
                 //int y = sc.nextInt();
                 if (x == 99) System.exit(1);
+
+                //validation 1
+                if(bin[x].peekDisk() == null){
+                    moveComment = "Illegal Move";
+                }
+
                 cp.move(x, y);
                 print();
                 
@@ -106,10 +113,11 @@ public class GameEngine {
         
     }   
     
-    public void print(){
+    public void print(String comment){
         for (int i=0;i<numOfBins;i++) {
             System.out.println("Bin "+bin[i].getLabel());
             System.out.println(bin[i]);
         }
+        System.out.println(comment);
     }
 }
