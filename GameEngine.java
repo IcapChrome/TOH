@@ -108,7 +108,7 @@ public class GameEngine {
     
     public void print(){
         for (int i=0;i<numOfBins;i++) {
-            System.out.println("Bin"+i);
+            System.out.println("Bin "+bin[i].getLabel());
             System.out.println(bin[i]);
         }
     }
